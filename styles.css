@@ -127,6 +127,9 @@ a:hover { color: var(--acc); }
   color: var(--acc);
 }
 
+.brand-text a { color: inherit; }
+.brand-text a:hover { color: var(--acc); }
+
 .brand-text {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
@@ -194,16 +197,6 @@ a:hover { color: var(--acc); }
 .hero {
   position: relative;
   padding-block: clamp(2.5rem, 6vw, 6rem);
-  background-image:
-    linear-gradient(var(--line2) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line2) 1px, transparent 1px);
-  background-size: clamp(40px, 6vw, 80px) clamp(40px, 6vw, 80px);
-  animation: drift 26s linear infinite;
-}
-
-@keyframes drift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 0 -80px, -80px 0; }
 }
 
 .hero-inner {
@@ -292,6 +285,7 @@ a:hover { color: var(--acc); }
   animation: float 8s ease-in-out infinite alternate;
 }
 .orb svg { width: min(100%, 400px); height: auto; }
+@media (min-width: 60em) { .hero-visual { padding-left: clamp(2rem, 5vw, 5rem); } }
 
 @keyframes float {
   from { transform: translateY(-11px); }
