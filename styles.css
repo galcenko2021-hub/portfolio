@@ -554,7 +554,7 @@ html:not(.no-js) .tabs { display: flex; }
 .marquee-group li::after { content: "✦"; font-size: 0.6em; color: var(--acc); }
 
 .marquee-group li { gap: 0.875rem; }
-.ai-logo { flex-shrink: 0; width: 1.5em; height: 1.5em; border-radius: 0.3em; }
+.ai-logo { flex-shrink: 0; width: 1.6em; height: 1.6em; padding: 0.2em; border-radius: 0.35em; background: #fff; object-fit: contain; }
 .ai-label { display: inline-grid; }
 .ai-name, .ai-mogged { grid-area: 1 / 1; }
 .ai-mogged { visibility: hidden; color: #ff2d2d; font-weight: 800; letter-spacing: 0.04em; }
