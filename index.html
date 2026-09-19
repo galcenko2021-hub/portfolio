@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ru" class="no-js" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Алексей Гальченко — ФИИТ, РТУ МИРЭА</title>
+<meta name="description" content="Портфолио студента направления 02.03.02 «Фундаментальная информатика и информационные технологии», профиль «Искусственный интеллект и машинное обучение», РТУ МИРЭА.">
+<meta name="theme-color" content="#07080B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Алексей Гальченко — ФИИТ, РТУ МИРЭА">
+<meta property="og:description" content="Студент ФИИТ РТУ МИРЭА. Машинное обучение, компьютерное зрение, C++ и Python.">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2307080B'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='14' font-weight='700' fill='%235BE0C8' text-anchor='middle'%3EАГ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Выставляем тему до первой отрисовки, чтобы не было вспышки светлого фона.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved === 'light' || saved === 'dark'
+        ? saved
+        : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">АГ</span>
+      <span class="brand-text">ФИИТ · ИИ и МО</span>
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Открыть меню">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path>
+        </svg>
+      </button>
+
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#edu">Образование</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#exp">Опыт</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="M4.9 4.9l1.4 1.4"></path><path d="M17.7 17.7l1.4 1.4"></path><path d="M2 12h2"></path>
+            <path d="M20 12h2"></path><path d="M4.9 19.1l1.4-1.4"></path><path d="M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"></path>
+          </svg>
+        </span>
+        <span class="theme-label" id="theme-label">светлая</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow reveal" data-delay="0">&gt; студент 1 курса · РТУ МИРЭА</p>
+        <h1 class="reveal" data-delay="1">Алексей<br><span class="sheen">Гальченко</span></h1>
+        <p class="lead reveal" data-delay="2">
+          Учусь на направлении <strong>02.03.02 «Фундаментальная информатика и информационные технологии»</strong>,
+          профиль «Искусственный интеллект и машинное обучение».
+        </p>
+        <p class="sub reveal" data-delay="3">
+          Собираю модели компьютерного зрения, пишу быстрый C++ и аккуратный Python.
+          Ищу стажировку в ML или бэкенде на лето 2027 года.
+        </p>
+        <div class="hero-actions reveal" data-delay="4">
+          <a class="btn btn-primary" href="#projects">Смотреть проекты</a>
+          <a class="btn btn-ghost" href="cv.pdf">Скачать резюме</a>
+        </div>
+        <a class="scroll-hint reveal" data-delay="5" href="#edu">
+          <span class="bob" aria-hidden="true">
+            <svg width="14" height="18" viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 1v15"></path><path d="M1.5 10.5L7 16l5.5-5.5"></path>
+            </svg>
+          </span>
+          листайте вниз
+        </a>
+      </div>
+
+      <div class="hero-visual reveal" data-delay="3">
+        <div class="orb">
+          <svg viewBox="0 0 400 400" role="img" aria-label="Декоративная анимированная сфера с фрагментами кода">
+            <defs>
+              <radialGradient id="orbFill" cx="36%" cy="30%" r="74%">
+                <stop offset="0%" stop-color="var(--acc)" stop-opacity="1"></stop>
+                <stop offset="52%" stop-color="var(--acc2)" stop-opacity=".92"></stop>
+                <stop offset="100%" stop-color="var(--acc2)" stop-opacity=".3"></stop>
+              </radialGradient>
+              <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="var(--acc)" stop-opacity=".38"></stop>
+                <stop offset="58%" stop-color="var(--acc2)" stop-opacity=".14"></stop>
+                <stop offset="100%" stop-color="var(--acc2)" stop-opacity="0"></stop>
+              </radialGradient>
+              <linearGradient id="orbSheen" gradientUnits="userSpaceOnUse" x1="-210" y1="-70" x2="190" y2="330">
+                <stop offset="0" stop-color="var(--acc2)"></stop>
+                <stop offset="0.3" stop-color="var(--acc)"></stop>
+                <stop offset="0.55" stop-color="var(--acc2)"></stop>
+                <stop offset="0.8" stop-color="var(--acc)"></stop>
+                <stop offset="1" stop-color="var(--acc2)"></stop>
+                <animate attributeName="x1" values="-210;610" dur="9s" repeatCount="indefinite"></animate>
+                <animate attributeName="y1" values="-70;340" dur="9s" repeatCount="indefinite"></animate>
+                <animate attributeName="x2" values="190;1010" dur="9s" repeatCount="indefinite"></animate>
+                <animate attributeName="y2" values="330;740" dur="9s" repeatCount="indefinite"></animate>
+              </linearGradient>
+              <path id="ring1" d="M 200,48 a 152,152 0 1,1 -0.1,0" fill="none"></path>
+              <path id="ring2" d="M 200,74 a 126,126 0 1,0 0.1,0" fill="none"></path>
+            </defs>
+
+            <circle class="orb-glow" cx="200" cy="200" r="190" fill="url(#orbGlow)"></circle>
+            <circle cx="200" cy="200" r="94" fill="url(#orbFill)"></circle>
+            <circle cx="200" cy="200" r="94" fill="url(#orbSheen)" opacity=".5"></circle>
+            <ellipse cx="172" cy="168" rx="34" ry="22" transform="rotate(-24 172 168)" fill="#ffffff" opacity=".22"></ellipse>
+
+            <g class="ring-a">
+              <circle cx="200" cy="200" r="152" fill="none" stroke="url(#orbSheen)" stroke-width="1.4" stroke-dasharray="2 10"></circle>
+              <circle cx="200" cy="48" r="4.5" fill="url(#orbSheen)"></circle>
+              <text class="ring-text ring-text-lg" letter-spacing="2.4" fill="url(#orbSheen)">
+                <textPath href="#ring1">malloc(n, sizeof(double)) · while (!done) { train(); } · argmax(p) · O(n log n) · </textPath>
+              </text>
+            </g>
+
+            <g class="ring-b">
+              <circle cx="200" cy="200" r="126" fill="none" stroke="url(#orbSheen)" stroke-width="1" opacity=".45"></circle>
+              <circle cx="326" cy="200" r="3.5" fill="url(#orbSheen)"></circle>
+              <text class="ring-text" letter-spacing="2" fill="url(#orbSheen)">
+                <textPath href="#ring2">градиентный спуск · backprop · тензор · свёртка · энтропия · softmax · </textPath>
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot dot-live"></span>
+            <span class="terminal-name">about.py</span>
+          </div>
+          <pre class="terminal-body"><code><span class="type" style="--chars:14; --at:620ms"><span class="kw">class</span> <span class="fn">Student</span>:</span><span class="type" style="--chars:31; --at:960ms">    name  = <span class="str">"Алексей Гальченко"</span></span><span class="type" style="--chars:29; --at:1640ms">    uni   = <span class="str">"РТУ МИРЭА · ИКБ"</span></span><span class="type" style="--chars:28; --at:2280ms">    track = <span class="str">"ФИИТ / ИИ и МО"</span></span><span class="type" style="--chars:13; --at:2900ms">    year  = <span class="kw">1</span></span><span class="type" style="--chars:29; --at:3220ms">    stack = [<span class="str">"Python"</span>, <span class="str">"C++"</span>]</span><span class="line-gap"> </span><span class="type" style="--chars:19; --at:3860ms">    <span class="kw">def</span> <span class="fn">goal</span>(self):</span><span class="type" style="--chars:27; --at:4300ms">        <span class="kw">return</span> <span class="str">"ML-инженер"</span><span class="caret">▍</span></span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <dl class="stats-grid">
+        <div class="stat"><dd>1/4</dd><dt>курс</dt></div>
+        <div class="stat"><dd>240</dd><dt>зачётных единиц</dt></div>
+        <div class="stat"><dd>8</dd><dt>семестров</dt></div>
+        <div class="stat"><dd>2030</dd><dt>год выпуска</dt></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="edu" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="num">01</span>Образование</h2>
+
+      <div class="edu-grid">
+        <article class="card edu-card reveal">
+          <h3 class="card-title">РТУ МИРЭА</h3>
+          <p class="muted">Институт кибербезопасности и цифровых технологий, кафедра информатики</p>
+          <dl class="facts">
+            <dt>код</dt><dd>02.03.02</dd>
+            <dt>профиль</dt><dd>Искусственный интеллект и машинное обучение</dd>
+            <dt>степень</dt><dd>Бакалавр, очная форма</dd>
+            <dt>сроки</dt><dd>2026 — 2030, 4 года</dd>
+            <dt>ФГОС</dt><dd>№ 808 от 23.08.2017</dd>
+          </dl>
+          <div class="credits">
+            <div><b>190 з.е.</b>дисциплины</div>
+            <div><b>41 з.е.</b>практика</div>
+            <div><b>9 з.е.</b>ВКР</div>
+          </div>
+        </article>
+
+        <div class="plan reveal">
+          <p class="mono muted">учебный план по курсам</p>
+
+          <div class="tabs" role="tablist" aria-label="Курсы обучения">
+            <button class="tab is-active" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" type="button">1 курс</button>
+            <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1" type="button">2 курс</button>
+            <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1" type="button">3 курс</button>
+            <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1" type="button">4 курс</button>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
+            <ul class="disciplines">
+              <li><span>Информатика</span><span class="sem">сем 1</span></li>
+              <li><span>Объектно-ориентированное программирование</span><span class="sem">сем 1</span></li>
+              <li><span>Основы машинного обучения</span><span class="sem">сем 1–2</span></li>
+              <li><span>Математический анализ</span><span class="sem">сем 1–2</span></li>
+              <li><span>Линейная алгебра и аналитическая геометрия</span><span class="sem">сем 1–2</span></li>
+              <li><span>Физика</span><span class="sem">сем 1–2</span></li>
+              <li><span>Компьютерное моделирование сложных систем</span><span class="sem">сем 2</span></li>
+              <li><span>История России</span><span class="sem">сем 1–2</span></li>
+              <li><span>Основы российской государственности</span><span class="sem">сем 1</span></li>
+              <li><span>Русский язык и культура речи</span><span class="sem">сем 1</span></li>
+              <li><span>Введение в профессиональную деятельность</span><span class="sem">сем 1</span></li>
+              <li><span>Иностранный язык</span><span class="sem">сем 1–2</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0">
+            <ul class="disciplines">
+              <li><span>Технологии программирования прикладных задач</span><span class="sem">сем 2–4</span></li>
+              <li><span>Программирование систем ИИ</span><span class="sem">сем 3–4</span></li>
+              <li><span>Математический анализ</span><span class="sem">сем 3</span></li>
+              <li><span>Специальные главы высшей математики</span><span class="sem">сем 3–4</span></li>
+              <li><span>Управление данными</span><span class="sem">сем 3</span></li>
+              <li><span>Системы ИИ и большие данные</span><span class="sem">сем 3–4</span></li>
+              <li><span>Теория информации и кодирования в ИИ</span><span class="sem">сем 4</span></li>
+              <li><span>Исследование операций</span><span class="sem">сем 4</span></li>
+              <li><span>Сетевые технологии</span><span class="sem">сем 4</span></li>
+              <li><span>Философия</span><span class="sem">сем 4</span></li>
+              <li><span>Учебная практика</span><span class="sem">сем 3</span></li>
+              <li><span>Проектная практика</span><span class="sem">сем 4</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0">
+            <ul class="disciplines">
+              <li><span>Интеллектуальный анализ данных</span><span class="sem">сем 5–6</span></li>
+              <li><span>Программирование систем ИИ</span><span class="sem">сем 5–6</span></li>
+              <li><span>Математическое программирование</span><span class="sem">сем 5</span></li>
+              <li><span>Интеллектуальные информационные системы</span><span class="sem">сем 5</span></li>
+              <li><span>Структуры данных в ИИ</span><span class="sem">сем 6</span></li>
+              <li><span>Математические основы ИИ</span><span class="sem">сем 6</span></li>
+              <li><span>Теория игр и ИИ</span><span class="sem">сем 6</span></li>
+              <li><span>Глубокое обучение и нейронные сети (по выбору)</span><span class="sem">сем 6</span></li>
+              <li><span>Архитектура бизнеса в высокотехнологичных отраслях</span><span class="sem">сем 6</span></li>
+              <li><span>Экономическая культура</span><span class="sem">сем 6</span></li>
+              <li><span>Безопасность жизнедеятельности</span><span class="sem">сем 5</span></li>
+              <li><span>Производственная практика</span><span class="sem">сем 5</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0">
+            <ul class="disciplines">
+              <li><span>Искусственный интеллект в принятии решений</span><span class="sem">сем 7</span></li>
+              <li><span>Вероятностные модели в задачах МО</span><span class="sem">сем 7</span></li>
+              <li><span>Эволюционные методы искусственного интеллекта</span><span class="sem">сем 7</span></li>
+              <li><span>Разработка безопасного программного обеспечения</span><span class="sem">сем 7</span></li>
+              <li><span>Инструменты управления большими данными (по выбору)</span><span class="sem">сем 7</span></li>
+              <li><span>Системный анализ и машинное обучение (по выбору)</span><span class="sem">сем 7</span></li>
+              <li><span>Технологическая (проектно-технологическая) практика</span><span class="sem">сем 7</span></li>
+              <li><span>Технологическая практика</span><span class="sem">сем 8</span></li>
+              <li><span>Преддипломная практика</span><span class="sem">сем 8</span></li>
+              <li><span>Подготовка и защита ВКР</span><span class="sem">сем 8</span></li>
+            </ul>
+          </div>
+
+          <p class="note">Ключевые дисциплины плана 2026 года. Полный перечень — 190 з.е. в блоке дисциплин.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="num">02</span>Проекты</h2>
+
+      <div class="projects-grid">
+        <article class="card project reveal">
+          <div class="project-head">
+            <h3 class="card-title">PCB Defect Vision</h3><span class="mono muted">01</span>
+          </div>
+          <p class="muted">Детектор дефектов печатных плат: дообученный ResNet-50 на 12 000 снимков, F1 0.94 на отложенной выборке. Инференс завёрнут в FastAPI-сервис с очередью.</p>
+          <ul class="chips"><li>Python</li><li>PyTorch</li><li>OpenCV</li><li>FastAPI</li></ul>
+          <a class="project-link" href="https://github.com/username/pcb-defect-vision">github.com/username/pcb-defect-vision <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-head">
+            <h3 class="card-title">mirea-schedule-bot</h3><span class="mono muted">02</span>
+          </div>
+          <p class="muted">Телеграм-бот с расписанием: парсит официальные .xlsx-файлы института, кеширует в Redis и присылает пары на завтра в 21:00. Около 340 пользователей группы.</p>
+          <ul class="chips"><li>Python</li><li>aiogram</li><li>Redis</li><li>Docker</li></ul>
+          <a class="project-link" href="https://github.com/username/mirea-schedule-bot">github.com/username/mirea-schedule-bot <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-head">
+            <h3 class="card-title">numlab</h3><span class="mono muted">03</span>
+          </div>
+          <p class="muted">Библиотека численных методов на C++20: СЛАУ, интерполяция, ОДУ. Python-биндинги через pybind11, покрытие тестами 87%.</p>
+          <ul class="chips"><li>C++20</li><li>pybind11</li><li>CMake</li><li>pytest</li></ul>
+          <a class="project-link" href="https://github.com/username/numlab">github.com/username/numlab <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-head">
+            <h3 class="card-title">algo-tracker</h3><span class="mono muted">04</span>
+          </div>
+          <p class="muted">Веб-трекер решённых алгоритмических задач: теплокарта активности, разбор по темам и напоминания о повторении.</p>
+          <ul class="chips"><li>TypeScript</li><li>React</li><li>FastAPI</li><li>PostgreSQL</li></ul>
+          <a class="project-link" href="https://github.com/username/algo-tracker">github.com/username/algo-tracker <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="num">03</span>Навыки и стек</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3>Языки</h3>
+          <ul><li>Python</li><li>C++</li><li>C</li><li>SQL</li><li>TypeScript</li><li>Bash</li></ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>ML и данные</h3>
+          <ul><li>PyTorch</li><li>scikit-learn</li><li>NumPy</li><li>pandas</li><li>OpenCV</li><li>Matplotlib</li></ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Бэкенд и инфра</h3>
+          <ul><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>Git</li><li>Linux</li></ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Математика</h3>
+          <ul><li>матанализ</li><li>линейная алгебра</li><li>теория вероятностей</li><li>методы оптимизации</li><li>дискретная математика</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="exp" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="num">04</span>Опыт и активности</h2>
+
+      <div class="timeline">
+        <article class="tl-item reveal">
+          <div class="tl-when mono">сент. 2026 — н.в.</div>
+          <div class="tl-body">
+            <h3>РТУ МИРЭА, ИКБ</h3>
+            <p class="tl-role">Студент бакалавриата</p>
+            <p class="muted">Направление 02.03.02, профиль «Искусственный интеллект и машинное обучение». Средний балл 4.8.</p>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-when mono">июнь 2026</div>
+          <div class="tl-body">
+            <h3>Хакатон «Цифровой прорыв»</h3>
+            <p class="tl-role">ML-инженер в команде из четырёх человек</p>
+            <p class="muted">Модуль прогноза загрузки пунктов выдачи на градиентном бустинге. 6 место из 84 команд.</p>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-when mono">2025 — 2026</div>
+          <div class="tl-body">
+            <h3>Олимпиады по информатике</h3>
+            <p class="tl-role">Призёр регионального этапа ВсОШ</p>
+            <p class="muted">Участник отборочного этапа «Высшей пробы» и «Физтеха» по информатике.</p>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-when mono">2024 — н.в.</div>
+          <div class="tl-body">
+            <h3>Самостоятельная практика</h3>
+            <p class="tl-role">Алгоритмы и пет-проекты</p>
+            <p class="muted">Около 400 решённых задач на Codeforces, текущий рейтинг 1420. Веду конспекты по ML в открытом репозитории.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="section">
+    <div class="container">
+      <div class="cta reveal">
+        <p class="eyebrow">05 · контакты</p>
+        <h2>Открыт к стажировкам<br>и учебным командам</h2>
+        <p class="muted cta-text">Пишите по любому поводу: ML-пет-проект, хакатон, олимпиадная подготовка или просто вопрос по учёбе на ФИИТ.</p>
+        <div class="contacts-grid">
+          <a class="contact" href="mailto:a.galchenko@example.com"><span class="mono">почта</span><b>a.galchenko@example.com</b></a>
+          <a class="contact" href="https://t.me/galchenko_dev"><span class="mono">telegram</span><b>@galchenko_dev</b></a>
+          <a class="contact" href="https://github.com/username"><span class="mono">github</span><b>github.com/username</b></a>
+          <a class="contact" href="cv.pdf"><span class="mono">резюме</span><b>PDF, 1 страница</b></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span id="year">2026</span> Алексей Гальченко · Москва</span>
+    <a href="#top">наверх ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
