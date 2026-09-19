@@ -553,6 +553,15 @@ html:not(.no-js) .tabs { display: flex; }
 }
 .marquee-group li::after { content: "✦"; font-size: 0.6em; color: var(--acc); }
 
+.marquee-group li { gap: 0.875rem; }
+.ai-logo { flex-shrink: 0; width: 1.5em; height: 1.5em; border-radius: 0.3em; }
+.ai-label { display: inline-grid; }
+.ai-name, .ai-mogged { grid-area: 1 / 1; }
+.ai-mogged { visibility: hidden; color: #ff2d2d; font-weight: 800; letter-spacing: 0.04em; }
+.marquee-group li:hover .ai-name { visibility: hidden; }
+.marquee-group li:hover .ai-mogged { visibility: visible; }
+.marquee-group li::after { margin-left: clamp(0.6rem, 1.5vw, 1.25rem); }
+
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 .to-top {
