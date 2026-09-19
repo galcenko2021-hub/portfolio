@@ -526,6 +526,46 @@ html:not(.no-js) .tabs { display: flex; }
   flex-shrink: 0;
 }
 
+/* --- Лента нейросетей -------------------------------------- */
+
+.ai-lead { margin-top: 0.75rem; max-width: 40rem; }
+
+.marquee {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+  border-block: 1px solid var(--line2);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-group { display: flex; flex-shrink: 0; margin: 0; padding: 0; list-style: none; }
+.marquee-group li {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding: 1.25rem clamp(1.5rem, 3vw, 2.5rem) 1.25rem 0;
+  font-family: var(--font-display, var(--font-mono));
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--fg);
+}
+.marquee-group li::after { content: "✦"; font-size: 0.6em; color: var(--acc); }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.to-top {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: border-color .25s, transform .25s;
+}
+.to-top:hover { border-color: var(--acc); color: var(--acc); transform: translateY(-2px); }
+
 /* --- Опыт -------------------------------------------------- */
 
 .timeline { margin-top: clamp(1.5rem, 3vw, 2.25rem); border-top: 1px solid var(--line2); }
@@ -665,6 +705,8 @@ html:not(.no-js) .tabs { display: flex; }
     transition-duration: .001ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+  .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .marquee-track { animation: none !important; }
   .type { clip-path: none; }
   .sheen { background-image: none; -webkit-text-fill-color: currentColor; }
 }

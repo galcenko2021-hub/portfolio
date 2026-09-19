@@ -95,7 +95,7 @@
           <a class="btn btn-primary" href="#projects">Смотреть проекты</a>
           <a class="btn btn-ghost" href="cv.pdf">Скачать резюме</a>
         </div>
-        <a class="scroll-hint reveal" data-delay="5" href="#edu">
+        <a class="scroll-hint reveal" data-delay="5" href="#edu" data-scroll="past-hero">
           <span class="bob" aria-hidden="true">
             <svg width="14" height="18" viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
               <path d="M7 1v15"></path><path d="M1.5 10.5L7 16l5.5-5.5"></path>
@@ -352,9 +352,22 @@
     </div>
   </section>
 
+  <section id="ai" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="num">04</span>Умею пользоваться</h2>
+      <p class="muted ai-lead">Нейросети, с которыми работаю: для кода, конспектов, разбора задач и картинок.</p>
+    </div>
+    <div class="marquee reveal" aria-label="Список нейросетей: GigaChat, YandexGPT, Claude, DeepSeek, ChatGPT, Gemini, Qwen, Kimi, Mistral, Llama, Grok, Perplexity, Copilot, Alice AI, Kandinsky, Midjourney">
+      <div class="marquee-track">
+        <ul class="marquee-group"><li>GigaChat</li><li>YandexGPT</li><li>Claude</li><li>DeepSeek</li><li>ChatGPT</li><li>Gemini</li><li>Qwen</li><li>Kimi</li><li>Mistral</li><li>Llama</li><li>Grok</li><li>Perplexity</li><li>Copilot</li><li>Alice AI</li><li>Kandinsky</li><li>Midjourney</li></ul>
+        <ul class="marquee-group" aria-hidden="true"><li>GigaChat</li><li>YandexGPT</li><li>Claude</li><li>DeepSeek</li><li>ChatGPT</li><li>Gemini</li><li>Qwen</li><li>Kimi</li><li>Mistral</li><li>Llama</li><li>Grok</li><li>Perplexity</li><li>Copilot</li><li>Alice AI</li><li>Kandinsky</li><li>Midjourney</li></ul>
+      </div>
+    </div>
+  </section>
+
   <section id="exp" class="section">
     <div class="container">
-      <h2 class="section-title"><span class="num">04</span>Опыт и активности</h2>
+      <h2 class="section-title"><span class="num">05</span>Опыт и активности</h2>
 
       <div class="timeline">
         <article class="tl-item reveal">
@@ -399,7 +412,7 @@
   <section id="contacts" class="section">
     <div class="container">
       <div class="cta reveal">
-        <p class="eyebrow">05 · контакты</p>
+        <p class="eyebrow">06 · контакты</p>
         <h2>Открыт к стажировкам<br>и учебным командам</h2>
         <p class="muted cta-text">Пишите по любому поводу: ML-пет-проект, хакатон, олимпиадная подготовка или просто вопрос по учёбе на ФИИТ.</p>
         <div class="contacts-grid">
@@ -418,7 +431,7 @@
   <div class="container footer-inner">
     <span>© <span id="year">2026</span> Алексей Гальченко · Москва</span>
     <span class="footer-credit">Сделано с помощью Claude</span>
-    <a href="#top">наверх ↑</a>
+    <a class="to-top" href="#top" data-scroll="top">наверх ↑</a>
   </div>
 </footer>
 

@@ -183,6 +183,30 @@
     });
   }
 
+  /* --- Плавные переходы: «листайте вниз» и «наверх» --------- */
+
+  var header = document.querySelector('.site-header');
+  var hero = document.querySelector('.hero');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function scrollToY(y) {
+    window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+
+  Array.prototype.slice.call(document.querySelectorAll('[data-scroll]')).forEach(function (el) {
+    el.addEventListener('click', function (event) {
+      var mode = el.getAttribute('data-scroll');
+      event.preventDefault();
+      if (mode === 'top') {
+        scrollToY(0);
+      } else if (mode === 'past-hero' && hero) {
+        // Низ героя точно под шапкой: героя на экране больше нет.
+        var headerHeight = header ? header.offsetHeight : 0;
+        scrollToY(hero.getBoundingClientRect().bottom + window.pageYOffset - headerHeight);
+      }
+    });
+  });
+
   /* --- Год в подвале --------------------------------------- */
 
   var year = document.getElementById('year');
