@@ -216,7 +216,7 @@ a:hover { color: var(--acc); }
 .hero h1 {
   margin-top: 1rem;
   font-weight: 800;
-  font-size: clamp(2.25rem, 6vw, 5.25rem);
+  font-size: clamp(2.25rem, 5.6vw, 5rem);
   line-height: 1.02;
   letter-spacing: -0.02em;
 }
@@ -226,6 +226,10 @@ a:hover { color: var(--acc); }
    нужен потому, что на самом h1 анимация появления перебила бы волну. */
 .name-wave {
   display: block;
+  /* Рамка растёт по самой длинной строке: иначе фон обрезал бы
+     последние буквы фамилии, а вместе с ними и саму букву. */
+  width: max-content;
+  max-width: none;
   background-image: linear-gradient(115deg,
     var(--fg) 0%, var(--fg) 32%,
     var(--acc) 42%, var(--acc2) 50%, var(--acc) 58%,
@@ -462,6 +466,43 @@ html:not(.no-js) .tabs { display: flex; }
   border-bottom: 1px solid var(--line2);
 }
 .sem { flex-shrink: 0; font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg3); }
+
+/* --- Почему МИРЭА ------------------------------------------ */
+
+.choices {
+  display: grid;
+  gap: 0.875rem;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+.choice {
+  padding: clamp(1.125rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  transition: border-color .25s, transform .25s;
+}
+.choice:hover { border-color: var(--acc); transform: translateY(-3px); }
+.choice h3 { font-size: 1.0625rem; line-height: 1.3; }
+.choice p { margin-top: 0.625rem; font-size: 0.9375rem; line-height: 1.5; }
+
+/* Последняя карточка — шутка, поэтому и выглядит иначе */
+.choice.is-key {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--panel), var(--panel)) padding-box,
+    linear-gradient(120deg, var(--acc), var(--acc2)) border-box;
+  border: 1px solid transparent;
+}
+.choice.is-key:hover { transform: translateY(-3px); }
+.choice-tag {
+  display: inline-block;
+  margin-bottom: 0.625rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acc);
+}
 
 /* --- Проекты ----------------------------------------------- */
 
@@ -812,6 +853,75 @@ html:not(.no-js) .tabs { display: flex; }
   overflow: hidden;
 }
 @media (min-width: 40em) { .act-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* --- DeepSeek ---------------------------------------------- */
+
+.ds {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  align-items: center;
+}
+@media (min-width: 60em) { .ds { grid-template-columns: minmax(0, 320px) minmax(0, 1fr); } }
+
+.ds-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 240px;
+}
+.ds-ring {
+  position: absolute;
+  width: min(240px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 42% 38%, #4d6bfe 0%, rgba(77, 107, 254, .35) 46%, transparent 70%);
+  animation: breathe 6s ease-in-out infinite;
+}
+.ds-whale {
+  position: relative;
+  width: min(180px, 52vw);
+  height: auto;
+  filter: drop-shadow(0 12px 30px rgba(77, 107, 254, .45));
+  animation: float 7s ease-in-out infinite alternate;
+}
+.ds-heart {
+  position: absolute;
+  font-size: 1.125rem;
+  color: #ff4d8d;
+  opacity: 0;
+  animation: heart 5s ease-in-out infinite;
+}
+.ds-h1 { left: 18%; bottom: 18%; animation-delay: 0s; }
+.ds-h2 { right: 20%; bottom: 26%; animation-delay: 1.7s; font-size: 0.875rem; }
+.ds-h3 { left: 46%; bottom: 12%; animation-delay: 3.2s; font-size: 1.375rem; }
+
+@keyframes heart {
+  0% { opacity: 0; transform: translateY(0) scale(.7); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-90px) scale(1.15); }
+}
+
+.ds-text h3 { font-size: clamp(1.25rem, 2.6vw, 1.875rem); line-height: 1.25; margin-top: 0.75rem; }
+.ds-text > p { margin-top: 0.875rem; color: var(--fg2); line-height: 1.55; }
+.ds-facts { margin: 1.25rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line2); }
+.ds-facts li {
+  padding: 0.6875rem 0;
+  border-bottom: 1px solid var(--line2);
+  font-size: 0.9375rem;
+  color: var(--fg2);
+}
+.ds-facts b { color: var(--fg); }
+.ds-vow {
+  margin-top: 1.25rem;
+  padding: 0.875rem 1.125rem;
+  border-left: 3px solid #ff4d8d;
+  border-radius: 0 10px 10px 0;
+  background: color-mix(in srgb, #ff4d8d 10%, transparent);
+  font-size: 0.9375rem;
+  color: var(--fg);
+}
+.ds-text .btn { margin-top: 1.25rem; }
 
 /* --- Путь -------------------------------------------------- */
 
