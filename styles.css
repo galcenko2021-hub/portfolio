@@ -600,6 +600,7 @@ html:not(.no-js) .tabs { display: flex; }
 .ai-d-dots { display: inline-flex; gap: 5px; }
 .ai-d-dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
 .ai-d-dots i.on { background: var(--acc); }
+.ai-d-dots i.bonus { background: #ff4d8d; box-shadow: 0 0 10px #ff4d8d; }
 
 @keyframes marquee { to { transform: translateX(-50%); } }
 
@@ -679,34 +680,27 @@ html:not(.no-js) .tabs { display: flex; }
   color: var(--fg3);
 }
 .footer-inner a { color: var(--fg2); }
+.footer-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.625rem; }
 .footer-credit {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.375rem 0.875rem 0.375rem 0.5rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  transition: border-color .25s, transform .25s;
-}
-.footer-credit img { width: 16px; height: 16px; }
-.footer-credit b { font-weight: 700; color: #d97757; }
-.footer-credit:hover { border-color: #d97757; color: var(--fg); transform: translateY(-2px); }
-.share {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   min-height: 44px;
-  margin-top: 1.25rem;
-  padding-inline: 1.125rem;
-  border: 1px solid var(--line);
+  padding: 0 1rem 0 0.75rem;
+  border: 1px solid transparent;
   border-radius: 999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--fg);
-  transition: border-color .25s, transform .25s;
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    linear-gradient(120deg, #d97757, var(--acc2), var(--acc)) border-box;
+  color: var(--fg2);
+  transition: transform .25s, box-shadow .25s;
 }
+.footer-credit img { width: 18px; height: 18px; }
+.footer-credit b { font-weight: 700; color: #d97757; }
+.footer-credit:hover { color: var(--fg); transform: translateY(-2px); box-shadow: 0 6px 24px color-mix(in srgb, #d97757 35%, transparent); }
+.share { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; padding-inline: 1rem; border: 1px solid var(--line); border-radius: 999px; font-size: 0.75rem; color: var(--fg2); transition: border-color .25s, transform .25s; }
 .share:hover { color: var(--fg); border-color: var(--acc); transform: translateY(-2px); }
-.share-sm { margin-top: 0.75rem; margin-left: 0.75rem; min-height: 36px; font-size: 0.8125rem; }
 
 /* --- Появление при скролле --------------------------------- */
 
