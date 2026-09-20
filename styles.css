@@ -555,11 +555,7 @@ html:not(.no-js) .tabs { display: flex; }
 
 .marquee-group li { gap: 0.875rem; }
 .ai-logo { flex-shrink: 0; width: 1.6em; height: 1.6em; padding: 0.2em; border-radius: 0.35em; background: #fff; object-fit: contain; }
-.ai-label { display: inline-grid; }
-.ai-name, .ai-mogged { grid-area: 1 / 1; }
-.ai-mogged { visibility: hidden; color: #ff2d2d; font-weight: 800; letter-spacing: 0.04em; }
-.marquee-group li:hover .ai-name { visibility: hidden; }
-.marquee-group li:hover .ai-mogged { visibility: visible; }
+.ai-label { display: inline-block; }
 .marquee-group li::after { margin-left: clamp(0.6rem, 1.5vw, 1.25rem); }
 
 @keyframes marquee { to { transform: translateX(-50%); } }
@@ -640,6 +636,34 @@ html:not(.no-js) .tabs { display: flex; }
   color: var(--fg3);
 }
 .footer-inner a { color: var(--fg2); }
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem 0.375rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: border-color .25s, transform .25s;
+}
+.footer-credit img { width: 16px; height: 16px; }
+.footer-credit b { font-weight: 700; color: #d97757; }
+.footer-credit:hover { border-color: #d97757; color: var(--fg); transform: translateY(-2px); }
+.share {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  margin-top: 1.25rem;
+  padding-inline: 1.125rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--fg);
+  transition: border-color .25s, transform .25s;
+}
+.share:hover { color: var(--fg); border-color: var(--acc); transform: translateY(-2px); }
+.share-sm { margin-top: 0.75rem; margin-left: 0.75rem; min-height: 36px; font-size: 0.8125rem; }
 
 /* --- Появление при скролле --------------------------------- */
 
