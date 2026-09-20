@@ -296,6 +296,30 @@
     });
   }
 
+  /* --- Карта активности ------------------------------------ */
+
+  var heatBox = document.getElementById('heatmap');
+  if (heatBox) {
+    // Одни и те же клетки при каждой загрузке: зерно берём из конфига.
+    var seed = (CFG.activity && CFG.activity.seed) || 17;
+    var random = function () {
+      seed = (seed * 1103515245 + 12345) % 2147483648;
+      return seed / 2147483648;
+    };
+    var cells = document.createDocumentFragment();
+    for (var week = 0; week < 53; week++) {
+      for (var day = 0; day < 7; day++) {
+        var value = random();
+        var level = value > 0.88 ? 4 : value > 0.72 ? 3 : value > 0.52 ? 2 : value > 0.3 ? 1 : 0;
+        if (day > 4 && level > 0) level -= 1; // на выходных спокойнее
+        var cell = document.createElement('i');
+        cell.className = 'hm-l' + level;
+        cells.appendChild(cell);
+      }
+    }
+    heatBox.appendChild(cells);
+  }
+
   /* --- Год в подвале --------------------------------------- */
 
   var year = document.getElementById('year');
