@@ -879,34 +879,14 @@ html:not(.no-js) .tabs { display: flex; }
   background: radial-gradient(circle at 42% 38%, #4d6bfe 0%, rgba(77, 107, 254, .35) 46%, transparent 70%);
   animation: breathe 6s ease-in-out infinite;
 }
-/* Маскот в белой рамке: у картинки светлый фон, поэтому она оформлена
-   как постер, а не вклеена в тёмный макет. */
 .ds-mascot {
   position: relative;
-  margin: 0;
-  width: min(280px, 72vw);
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 18px 50px rgba(77, 107, 254, .35);
+  width: min(300px, 78vw);
+  height: auto;
+  filter: drop-shadow(0 18px 40px rgba(77, 107, 254, .5));
   animation: float 7s ease-in-out infinite alternate;
 }
-.ds-mascot > img:first-child {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: inherit;
-}
-.ds-whale {
-  position: absolute;
-  right: -14px;
-  bottom: -14px;
-  width: 52px;
-  height: 52px;
-  padding: 8px;
-  border-radius: 14px;
-  background: var(--bg);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
-}
+
 .ds-heart {
   position: absolute;
   font-size: 1.125rem;
