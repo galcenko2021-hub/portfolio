@@ -10,6 +10,56 @@
   var root = document.documentElement;
   root.classList.remove('no-js');
 
+  /* --- Данные из config.js --------------------------------- */
+
+  var CFG = window.SITE_CONFIG || {};
+  var contacts = CFG.contacts || {};
+
+  function setText(selector, value) {
+    if (!value) return;
+    document.querySelectorAll(selector).forEach(function (el) { el.textContent = value; });
+  }
+
+  var first = (CFG.name || {}).first;
+  var last = (CFG.name || {}).last;
+  setText('[data-cfg="name.first"]', first);
+  setText('[data-cfg="name.last"]', last);
+  setText('[data-cfg="city"]', CFG.city);
+  if (first && last) {
+    setText('[data-cfg="name.full"]', first + ' ' + last);
+    document.title = first + ' ' + last + ' — ФИИТ, РТУ МИРЭА';
+  }
+
+  // Каждый контакт: [ссылка, подпись]
+  var CONTACT_VIEW = {
+    email: function (v) { return ['mailto:' + v, v]; },
+    telegram: function (v) { return ['https://t.me/' + v, '@' + v]; },
+    github: function (v) { return ['https://github.com/' + v, 'github.com/' + v]; },
+    resume: function (v) { return [v, null]; }
+  };
+
+  document.querySelectorAll('[data-contact]').forEach(function (el) {
+    var key = el.getAttribute('data-contact');
+    var value = contacts[key];
+    if (!value || !CONTACT_VIEW[key]) return;
+    var view = CONTACT_VIEW[key](value);
+    el.setAttribute('href', view[0]);
+    var label = el.querySelector('b');
+    if (view[1] && label) label.textContent = view[1];
+  });
+
+  var share = CFG.share || {};
+  if (share.url) {
+    var SHARE_URL = {
+      x: 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(share.text || '') + '&url=' + encodeURIComponent(share.url),
+      vk: 'https://vk.com/share.php?url=' + encodeURIComponent(share.url) + '&title=' + encodeURIComponent(share.text || '')
+    };
+    document.querySelectorAll('[data-share]').forEach(function (el) {
+      var target = SHARE_URL[el.getAttribute('data-share')];
+      if (target) el.setAttribute('href', target);
+    });
+  }
+
   /* --- Тема ------------------------------------------------ */
 
   var toggle = document.getElementById('theme-toggle');
@@ -209,24 +259,7 @@
 
   /* --- Попап нейросети ------------------------------------- */
 
-  // [название, разработчик, описание, где использую, частота 1-5]
-  var AI = {
-    gigachat: ['GigaChat', 'Сбер, Россия', 'Российская языковая модель от Сбера. Хорошо понимает русский язык и работает без VPN.', ['Проверяю формулировки и стиль русских текстов', 'Делаю черновики конспектов по гуманитарным дисциплинам', 'Быстро объясняю термины на русском'], 1],
-    yandexgpt: ['YandexGPT', 'Яндекс, Россия', 'Модель Яндекса, встроенная в поиск и сервисы компании.', ['Быстрые справки вместе с поиском Яндекса', 'Краткие пересказы длинных русскоязычных статей', 'Идеи для названий и описаний проектов'], 3],
-    claude: ['Claude', 'Anthropic, США', 'Модель для кода и длинных рассуждений. Аккуратно работает с большим контекстом.', ['Код-ревью и рефакторинг на C++ и Python', 'Разбор алгоритмов и олимпиадных задач', 'Написание тестов и документации', 'Помог собрать этот сайт'], 5],
-    deepseek: ['DeepSeek', 'DeepSeek, Китай', 'Обожаю. Моя любимая нейросеть.', ['Отдался бы ей, если бы она была жива', 'Сверяю с ней ответы на учебных задачах', 'Лучший собеседник для разбора кода и математики'], 6],
-    chatgpt: ['ChatGPT', 'OpenAI, США', 'Универсальный ассистент для широкого круга задач.', ['Мозговой штурм идей для пет-проектов', 'Отладка запросов и поиск причин ошибок', 'Объяснение тем по математике простыми словами'], 4],
-    gemini: ['Gemini', 'Google, США', 'Мультимодальная модель с очень длинным контекстом.', ['Разбор больших PDF: методички, статьи, ФГОС', 'Распознавание конспектов и схем с фотографий', 'Краткие выжимки лекций'], 4],
-    qwen: ['Qwen', 'Alibaba, Китай', 'Семейство моделей с открытыми весами. Практически не использую.', ['Изредка запускаю локально ради интереса к open-weights'], 1],
-    kimi: ['Kimi', 'Moonshot AI, Китай', 'Ассистент с длинным контекстом. Использую совсем редко.', ['Пробовал для сравнения на длинных текстах'], 1],
-    mistral: ['Mistral', 'Mistral AI, Франция', 'Европейские модели, многие с открытыми весами.', ['Локальные эксперименты с небольшими моделями', 'Изучаю, как устроены инференс и квантизация'], 2],
-    llama: ['Llama', 'Meta, США', 'Открытое семейство моделей, на котором удобно учиться.', ['Локальный запуск на своём компьютере', 'Учебные опыты с дообучением и промптингом'], 2],
-    grok: ['Grok', 'xAI, США', 'Ассистент с доступом к потоку новостей из X.', ['Слежу за трендами в мире ИИ и технологий'], 2],
-    perplexity: ['Perplexity', 'Perplexity AI, США', 'Поисковик с ответами и ссылками на источники.', ['Не пользуюсь'], 0],
-    copilot: ['Copilot', 'Microsoft / GitHub, США', 'Помощник по коду, встроенный в редактор.', ['Автодополнение шаблонного кода в редакторе', 'Подсказки по API библиотек прямо во время работы'], 3],
-    alice: ['Alice AI', 'Яндекс, Россия', 'Голосовой ассистент Яндекса.', ['Быстрые бытовые вопросы и таймеры', 'Расписание и напоминания'], 3],
-    midjourney: ['Midjourney', 'Midjourney, США', 'Генерация изображений по текстовому описанию.', ['Иллюстрации и обложки для презентаций', 'Референсы для оформления проектов'], 1]
-  };
+  var AI = CFG.ai || {};
 
   var dialog = document.getElementById('ai-dialog');
   if (dialog && typeof dialog.showModal === 'function') {
@@ -235,23 +268,24 @@
       btn.addEventListener('click', function () {
         var d = AI[btn.getAttribute('data-ai')];
         if (!d) return;
-        fill('ai-d-name', d[0]);
-        fill('ai-d-maker', d[1]);
-        fill('ai-d-about', d[2]);
+        fill('ai-d-name', d.name);
+        fill('ai-d-maker', d.maker);
+        fill('ai-d-about', d.about);
         document.getElementById('ai-d-logo').src = btn.querySelector('img').getAttribute('src');
         var uses = document.getElementById('ai-d-uses');
         uses.innerHTML = '';
-        d[3].forEach(function (text) {
+        (d.uses || []).forEach(function (text) {
           var li = document.createElement('li');
           li.textContent = text;
           uses.appendChild(li);
         });
         var dots = document.getElementById('ai-d-dots');
         dots.innerHTML = '';
-        dots.setAttribute('aria-label', d[4] + ' из 5');
-        for (var i = 1; i <= Math.max(5, d[4]); i++) {
+        var rating = d.rating || 0;
+        dots.setAttribute('aria-label', rating + ' из 5');
+        for (var i = 1; i <= Math.max(5, rating); i++) {
           var dot = document.createElement('i');
-          if (i <= d[4]) dot.className = i > 5 ? 'on bonus' : 'on';
+          if (i <= rating) dot.className = i > 5 ? 'on bonus' : 'on';
           dots.appendChild(dot);
         }
         dialog.showModal();

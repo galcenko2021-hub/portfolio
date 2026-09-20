@@ -55,7 +55,9 @@
         <li><a href="#edu">Образование</a></li>
         <li><a href="#projects">Проекты</a></li>
         <li><a href="#skills">Навыки</a></li>
+        <li><a href="#ai">ИИ</a></li>
         <li><a href="#exp">Опыт</a></li>
+        <li><a href="#faq">Вопросы</a></li>
         <li><a href="#contacts">Контакты</a></li>
       </ul>
 
@@ -82,7 +84,7 @@
     <div class="container hero-inner">
       <div class="hero-text">
         <p class="eyebrow reveal" data-delay="0">&gt; студент 1 курса · РТУ МИРЭА</p>
-        <h1 class="reveal" data-delay="1">Алексей<br><span class="sheen">Гальченко</span></h1>
+        <h1 class="reveal" data-delay="1"><span data-cfg="name.first">Алексей</span><br><span class="sheen" data-cfg="name.last">Гальченко</span></h1>
         <p class="lead reveal" data-delay="2">
           Учусь на направлении <strong>02.03.02 «Фундаментальная информатика и информационные технологии»</strong>,
           профиль «Искусственный интеллект и машинное обучение».
@@ -93,7 +95,7 @@
         </p>
         <div class="hero-actions reveal" data-delay="4">
           <a class="btn btn-primary" href="#projects">Смотреть проекты</a>
-          <a class="btn btn-ghost" href="cv.pdf">Скачать резюме</a>
+          <a class="btn btn-ghost" data-contact="resume" href="cv.pdf">Скачать резюме</a>
         </div>
         <a class="scroll-hint reveal" data-delay="5" href="#edu" data-scroll="past-hero">
           <span class="bob" aria-hidden="true">
@@ -366,13 +368,35 @@
     <div class="container">
       <aside class="card why reveal">
         <p class="eyebrow">зачем мне нейросети</p>
-        <p class="why-text">Использую ИИ как рабочий инструмент: чтобы <strong>повышать эффективность работы</strong> и быстрее доводить задачи до результата. Рутину — модели, решения и проверку — мне.</p>
-        <a class="why-link" href="https://www.nber.org/papers/w31161" target="_blank" rel="noopener">
-          <span class="mono">исследование · NBER, 2023</span>
-          <b>Brynjolfsson, Li, Raymond — «Generative AI at Work»</b>
-          <span class="muted">Доступ к ИИ-ассистенту поднял производительность в среднем на 14%, а у новичков — на 34%.</span>
-        </a>
+        <p class="why-text">Использую ИИ как рабочий инструмент: чтобы <strong>повышать эффективность работы</strong> и быстрее доводить задачи до результата. Рутину — модели, решения и проверку — мне. Ниже — исследования, которые измеряли этот эффект.</p>
       </aside>
+
+      <div class="studies reveal">
+        <a class="study" href="https://www.nber.org/papers/w31161" target="_blank" rel="noopener">
+          <span class="study-num">+14%</span>
+          <b>Generative AI at Work</b>
+          <span class="mono study-src">Brynjolfsson, Li, Raymond · NBER, 2023</span>
+          <span class="muted study-note">Доступ к ИИ-ассистенту поднял производительность сотрудников поддержки на 14%, а у новичков — на 34%.</span>
+        </a>
+        <a class="study" href="https://www.science.org/doi/10.1126/science.adh2586" target="_blank" rel="noopener">
+          <span class="study-num">−40%</span>
+          <b>Productivity effects of generative AI</b>
+          <span class="mono study-src">Noy, Zhang · Science, 2023</span>
+          <span class="muted study-note">В эксперименте с 453 специалистами время на письменные задачи упало на 40%, качество выросло на 18%.</span>
+        </a>
+        <a class="study" href="https://arxiv.org/abs/2302.06590" target="_blank" rel="noopener">
+          <span class="study-num">×1.6</span>
+          <b>The Impact of AI on Developer Productivity</b>
+          <span class="mono study-src">Peng, Kalliamvakou, Cihon, Demirer · 2023</span>
+          <span class="muted study-note">Разработчики с GitHub Copilot написали HTTP-сервер на 55,8% быстрее контрольной группы.</span>
+        </a>
+        <a class="study" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321" target="_blank" rel="noopener">
+          <span class="study-num">+40%</span>
+          <b>Navigating the Jagged Technological Frontier</b>
+          <span class="mono study-src">Dell'Acqua, Mollick, Lakhani и др. · HBS, 2023</span>
+          <span class="muted study-note">758 консультантов BCG: на 12,2% больше задач, на 25,1% быстрее и более чем на 40% выше качество.</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -388,9 +412,43 @@
     </div>
   </section>
 
+  <section id="now" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="num">06</span>Сейчас изучаю</h2>
+      <p class="muted ai-lead">Чем занимаюсь помимо обязательной программы. Проценты — моя собственная оценка прогресса.</p>
+      <div class="now-grid reveal">
+        <div class="now-item">
+          <div class="now-head"><b>PyTorch и компьютерное зрение</b><span class="mono">65%</span></div>
+          <div class="bar" style="--v: 65%"><i></i></div>
+          <p class="muted">Свёрточные сети, аугментации, дообучение на своих наборах данных.</p>
+        </div>
+        <div class="now-item">
+          <div class="now-head"><b>C++20 и STL</b><span class="mono">50%</span></div>
+          <div class="bar" style="--v: 50%"><i></i></div>
+          <p class="muted">Шаблоны, контейнеры, умные указатели и разбор того, во что это компилируется.</p>
+        </div>
+        <div class="now-item">
+          <div class="now-head"><b>Алгоритмы на Codeforces</b><span class="mono">45%</span></div>
+          <div class="bar" style="--v: 45%"><i></i></div>
+          <p class="muted">Графы, динамическое программирование, структуры данных. Цель — рейтинг 1600.</p>
+        </div>
+        <div class="now-item">
+          <div class="now-head"><b>Математический анализ</b><span class="mono">70%</span></div>
+          <div class="bar" style="--v: 70%"><i></i></div>
+          <p class="muted">Ряды, кратные интегралы и дифференциальные уравнения по программе второго семестра.</p>
+        </div>
+        <div class="now-item">
+          <div class="now-head"><b>Английский, B2 → C1</b><span class="mono">40%</span></div>
+          <div class="bar" style="--v: 40%"><i></i></div>
+          <p class="muted">Читаю статьи по ML в оригинале и пишу документацию на английском.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="exp" class="section">
     <div class="container">
-      <h2 class="section-title"><span class="num">06</span>Опыт и активности</h2>
+      <h2 class="section-title"><span class="num">07</span>Опыт и активности</h2>
 
       <div class="timeline">
         <article class="tl-item reveal">
@@ -432,17 +490,45 @@
     </div>
   </section>
 
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="num">08</span>Частые вопросы</h2>
+      <div class="faq reveal">
+        <details>
+          <summary>Какую стажировку ищу?</summary>
+          <p class="muted">ML или бэкенд, лето 2027 года. Москва или удалённо. Готов начать с задач по данным и инфраструктуре — важнее команда, у которой можно учиться.</p>
+        </details>
+        <details>
+          <summary>Если код пишет нейросеть, что делаете вы?</summary>
+          <p class="muted">Ставлю задачу, выбираю решение и отвечаю за результат. Модель ускоряет набор текста и черновики, но архитектуру, проверку и отладку никто за меня не сделает. Код, который я не понимаю, в проект не попадает.</p>
+        </details>
+        <details>
+          <summary>На каком языке пишете лучше всего?</summary>
+          <p class="muted">Python — для машинного обучения и прототипов, C++ — когда важна скорость и контроль над памятью. SQL и TypeScript использую по необходимости.</p>
+        </details>
+        <details>
+          <summary>Можно позвать вас в команду на хакатон?</summary>
+          <p class="muted">Да. Беру на себя ML-часть или бэкенд, могу собрать прототип за выходные. Пишите в телеграм.</p>
+        </details>
+        <details>
+          <summary>Где посмотреть код?</summary>
+          <p class="muted">Все учебные проекты и конспекты лежат в открытых репозиториях на GitHub — ссылка в контактах.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contacts" class="section">
     <div class="container">
       <div class="cta reveal">
-        <p class="eyebrow">07 · контакты</p>
+        <p class="eyebrow">09 · контакты</p>
         <h2>Открыт к стажировкам<br>и учебным командам</h2>
         <p class="muted cta-text">Пишите по любому поводу: ML-пет-проект, хакатон, олимпиадная подготовка или просто вопрос по учёбе на ФИИТ.</p>
         <div class="contacts-grid">
-          <a class="contact" href="mailto:galchenko.a.d@edu.mirea.ru"><span class="mono">почта</span><b>galchenko.a.d@edu.mirea.ru</b></a>
-          <a class="contact" href="https://t.me/Maximalism666"><span class="mono">telegram</span><b>@Maximalism666</b></a>
-          <a class="contact" href="https://github.com/galcenko2021-hub"><span class="mono">github</span><b>github.com/galcenko2021-hub</b></a>
-          <a class="contact" href="cv.pdf"><span class="mono">резюме</span><b>PDF, 1 страница</b></a>
+          <a class="contact" data-contact="email" href="mailto:galchenko.a.d@edu.mirea.ru"><span class="mono">почта</span><b>galchenko.a.d@edu.mirea.ru</b></a>
+          <a class="contact" data-contact="telegram" href="https://t.me/Maximalism666"><span class="mono">telegram</span><b>@Maximalism666</b></a>
+          <a class="contact" data-contact="github" href="https://github.com/galcenko2021-hub"><span class="mono">github</span><b>github.com/galcenko2021-hub</b></a>
+          <a class="contact" data-contact="resume" href="cv.pdf"><span class="mono">резюме</span><b>PDF, 1 страница</b></a>
         </div>
       </div>
     </div>
@@ -452,10 +538,16 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span class="footer-copy">© <span id="year">2026</span> Алексей Гальченко · Москва</span>
+    <span class="footer-copy">© <span id="year">2026</span> <span data-cfg="name.full">Алексей Гальченко</span> · <span data-cfg="city">Москва</span></span>
     <div class="footer-actions">
-      <a class="footer-credit" href="https://claude.com/pricing/max" target="_blank" rel="noopener"><img src="logos/claude.svg" alt="" width="18" height="18"><span>Сделано с помощью <b>Claude</b></span></a>
-      <a class="share" href="https://twitter.com/intent/tweet?text=%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D1%8F%20%D0%93%D0%B0%D0%BB%D1%8C%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%20%E2%80%94%20%D1%81%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%82%D0%B0%20%D0%A4%D0%98%D0%98%D0%A2%20%D0%A0%D0%A2%D0%A3%20%D0%9C%D0%98%D0%A0%D0%AD%D0%90%3A%20ML%2C%20C%2B%2B%2C%20Python&url=https%3A%2F%2Fgalcenko2021-hub.github.io%2Fportfolio%2F" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Поделиться</a>
+      <a class="footer-credit" href="https://claude.com/pricing/max" target="_blank" rel="noopener">
+        <img src="logos/claude.svg" alt="" width="18" height="18">
+        <span>Сделано с помощью <b>Claude</b></span>
+      </a>
+      <span class="share-group">
+        <a class="share" data-share="x" href="https://twitter.com/intent/tweet" target="_blank" rel="noopener" aria-label="Поделиться в X"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a class="share" data-share="vk" href="https://vk.com/share.php" target="_blank" rel="noopener" aria-label="Поделиться во ВКонтакте"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974H1.74c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.808 7.376 2.808z"/></svg></a>
+      </span>
       <a class="to-top" href="#top" data-scroll="top">наверх ↑</a>
     </div>
   </div>
@@ -473,6 +565,7 @@
   <p class="ai-d-freq"><span class="mono muted">частота использования</span><span class="ai-d-dots" id="ai-d-dots" role="img"></span></p>
 </dialog>
 
+<script src="config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
